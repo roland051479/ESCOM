@@ -1,0 +1,10 @@
+body {
+  background: #103e83;
+  color: #fff;
+}
+.logo{
+  display: block;
+  margin: 0 auto;
+  height: 30%;
+  width: 30%;
+}

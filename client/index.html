@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CONTRATO INTELIGENTE</title>
+    <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./main.css" />
+    <!-- Google icons -->
+    
+  </head>
+  <body>
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card card-body bg-dark border-5 rounded-4 mb-4">
+            <img src="escudo/logo.png" alt="" class="logo"/>
+              <!--<span class="material-icons"> grid_view </span>-->
+              ESCOM
+            
+            <h6 class="text-muted">Aplicación desentralizada </h6>
+           
+            <span id="account"></span>
+          </div>
+
+          <form id="taskForm" class="card card-body bg-dark border-5">
+            <h4>Alumno</h4>
+            <input
+              type="text"
+              id="title"
+              class="form-control bg-dark border-3 rounded-3 text-warning my-4"
+              placeholder="Nombre del alumno"
+              autofocus
+            />
+            <h4>Año</h4>
+            <textarea
+              id="description"
+              rows="2"
+              class="form-control bg-dark border-3 rounded-3 text-warning my-4"
+              placeholder="Fecha de graduación"
+            ></textarea>
+            <button class="btn btn-success">Guardar</button>
+          </form>
+        </div>
+        <div class="col-md-8">
+          <div id="tasksList"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script src="/libs/web3/dist/web3.min.js"></script> -->
+    <script src="/libs/@truffle/contract/dist/truffle-contract.min.js"></script>
+    <script src="./app.js"></script>
+    <script src="./ui.js"></script>
+  </body>
+</html>
