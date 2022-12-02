@@ -8,6 +8,10 @@ contract TasksContract {
         uint256 id;
         string title;
         string description;
+        string institucion;
+        string nombre;
+         string resolucion;
+
         bool done;
         uint256 createdAt;
     }
@@ -16,6 +20,9 @@ contract TasksContract {
         uint256 id,
         string title,
         string description,
+         string institucion,
+        string nombre,
+         string resolucion,
         bool done,
         uint256 createdAt
     );
@@ -24,10 +31,10 @@ contract TasksContract {
     mapping(uint256 => Task) public tasks;
 
     constructor() {
-        createTask("BLOCKCHAIN", "ESCOM");
+        createTask("uno","dos","tres","cuatro","cinco");
     }
 
-    function createTask(string memory _title, string memory _description)
+    function createTask(string memory _title, string memory _description,string memory _institucion,string memory _nombre,string memory _resolucion)
         public
     {
         tasksCounter++;
@@ -35,6 +42,9 @@ contract TasksContract {
             tasksCounter,
             _title,
             _description,
+            _institucion,
+            _nombre,
+            _resolucion,
             false,
             block.timestamp
         );
@@ -42,6 +52,9 @@ contract TasksContract {
             tasksCounter,
             _title,
             _description,
+            _institucion,
+            _nombre,
+            _resolucion,
             false,
             block.timestamp
         );

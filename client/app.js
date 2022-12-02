@@ -51,8 +51,11 @@ App = {
       //const taskId = task[0].toNumber();
       const taskTitle = task[1];
       const taskDescription = task[2];
+      const taskInstitucion = task[3];
+      const taskNombre = task[4];
+      const taskResolucion = task[5];
       //const taskDone = task[3];
-      const taskCreatedAt = task[3];
+      const taskCreatedAt = task[7];
 
       // Creating a task Card
       let taskElement = `<div class="card bg-dark rounded-7 border-5 mb-2">
@@ -62,6 +65,13 @@ App = {
         </div>
         <div class="card-body ">
           <span>${taskDescription}</span>
+          <div class="card-body ">
+          <span>${taskInstitucion}</span>
+          <div class="card-body ">
+          <span>${taskNombre}</span>
+          <div class="card-body ">
+          <span>${taskResolucion}</span>
+
          
           <p class="text-muted ">Registro creado ${new Date(
             taskCreatedAt * 1000
@@ -76,7 +86,7 @@ App = {
   },
   createTask: async (title, description) => {
     try {
-      const result = await App.tasksContract.createTask(title, description, {
+      const result = await App.tasksContract.createTask(title, description,institucion,nombre,resolucion,{
         from: App.account,
       });
       console.log(result.logs[0].args);
