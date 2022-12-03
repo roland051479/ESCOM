@@ -31,7 +31,7 @@ contract TasksContract {
     mapping(uint256 => Task) public tasks;
 
     constructor() {
-        createTask("uno","dos","tres","cuatro","cinco");
+         createTask("BlOCKCHAIN","ESCOM"," ",""," ");
     }
 
     function createTask(string memory _title, string memory _description,string memory _institucion,string memory _nombre,string memory _resolucion)

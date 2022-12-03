@@ -12,6 +12,9 @@ contract("TasksContract", (accounts) => {
     assert.notEqual(address, undefined);
     assert.notEqual(address, 0x0);
     assert.notEqual(address, "");
+    assert.notEqual(address, "");
+    assert.notEqual(address, "");
+    assert.notEqual(address, "");
   });
 
   it("get Tasks List", async () => {
@@ -21,12 +24,16 @@ contract("TasksContract", (accounts) => {
     assert.equal(task.id.toNumber(), tasksCounter.toNumber());
     assert.equal(task.title, "BLOCKCHAIN");
     assert.equal(task.description, "ESCOM");
+    assert.equal(task.institucion, " ");
+    assert.equal(task.nombre, " ");
+    assert.equal(task.resolucion, " ");
+    
     //assert.equal(task.done, false);
     assert.equal(tasksCounter, 1);
   });
 
   it("task created successfully", async () => {
-    const result = await this.tasksContract.createTask("some task two", "description two");
+    const result = await this.tasksContract.createTask("some task two", "description two","","","");
     const taskEvent = result.logs[0].args;
     const tasksCounter = await this.tasksContract.tasksCounter();
 
@@ -34,6 +41,9 @@ contract("TasksContract", (accounts) => {
     assert.equal(taskEvent.id.toNumber(), 2);
     assert.equal(taskEvent.title, "some task two");
     assert.equal(taskEvent.description, "description two");
+    assert.equal(taskEvent.institucion, " ");
+    assert.equal(taskEvent.nombre, " ");
+    assert.equal(taskEvent.resolucion, " ");
     assert.equal(taskEvent.done, false);
   });
 

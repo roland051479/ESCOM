@@ -64,13 +64,13 @@ App = {
           
         </div>
         <div class="card-body ">
-          <span>${taskDescription}</span>
-          <div class="card-body ">
-          <span>${taskInstitucion}</span>
-          <div class="card-body ">
-          <span>${taskNombre}</span>
-          <div class="card-body ">
-          <span>${taskResolucion}</span>
+          <span>${taskDescription}</span><br>
+          
+          <span>${taskInstitucion}</span><br>
+          
+          <span>${taskNombre}</span><br>
+          
+          <span>${taskResolucion}</span><br>
 
          
           <p class="text-muted ">Registro creado ${new Date(
@@ -84,7 +84,7 @@ App = {
 
     document.querySelector("#tasksList").innerHTML = html;
   },
-  createTask: async (title, description) => {
+  createTask: async (title, description,institucion,nombre,resolucion) => {
     try {
       const result = await App.tasksContract.createTask(title, description,institucion,nombre,resolucion,{
         from: App.account,

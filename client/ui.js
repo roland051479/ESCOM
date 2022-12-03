@@ -11,5 +11,10 @@ taskForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const title = taskForm["title"].value;
   const description = taskForm["description"].value;
-  App.createTask(title, description);
+  const institucion = taskForm["institucion"].value;
+  const nombre = taskForm["nombre"].value;
+  const resolucion = taskForm["resolucion"].value;
+  
+
+  App.createTask(title, description,institucion,nombre,resolucion);
 });
